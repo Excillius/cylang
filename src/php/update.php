@@ -1,11 +1,10 @@
 <?php
-
     $conn = mysqli_connect('cylang_db', 'cylang', '7:2,M4AytU:Rf7', 'logindb');
     
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $pass = $_POST['newPass'];
-    $address = $_POST['address'];
+    $username = mysqli_real_escape_string($conn,$_POST['username']);
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $pass = mysqli_real_escape_string($conn,$_POST['newPass']);
+    $address = mysqli_real_escape_string($conn,$_POST['address']);
 
     $koki = $_COOKIE["session"];
     $update_users = "UPDATE users SET username = '$username', email = '$email', pass = '$pass', domicile='$address' WHERE hashing='$koki'";
