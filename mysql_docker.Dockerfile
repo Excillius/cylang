@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:8.0-debian
 
 #building mysql
 RUN rm -rf mysql-data
