@@ -1,4 +1,4 @@
-FROM php:8.1.10-apache
+FROM php:8.1.12-cli-bullseye
 
 COPY src/ /var/www/html/
 
