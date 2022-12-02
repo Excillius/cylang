@@ -1,5 +1,4 @@
 <?php
-
     $conn = mysqli_connect('cylang_db', 'cylang', '7:2,M4AytU:Rf7', 'logindb');
     
     $username = mysqli_real_escape_string($conn,$_POST['username']);
