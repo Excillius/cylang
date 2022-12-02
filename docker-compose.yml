@@ -10,11 +10,11 @@ services:
       - 3738:80
   cylang_db:
     environment:
-      MYSQL_ROOT_PASSWORD: '7:2,M4AytU:Rf7092qp1'
-      MYSQL_PASSWORD: '7:2,M4AytU:Rf7'
-      MYSQL_USER: 'cylang'
-      MYSQL_DATABASE: 'logindb'
-      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
     build:
       context: .
       dockerfile: mysql_docker.Dockerfile
