@@ -1,4 +1,6 @@
 #!/bin/bash
+set a
+source .env
 docker-compose build --no-cache
 docker stop cylang_main
 docker stop cylang_login_db
