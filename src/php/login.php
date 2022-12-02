@@ -2,8 +2,8 @@
 
 $conn = mysqli_connect('cylang_db', 'cylang', '7:2,M4AytU:Rf7', 'logindb');
 
-$email = $_POST['email'];
-$pass = $_POST['password'];
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$pass = mysqli_real_escape_string($conn, $_POST['password']);
 $mysql_get_users = "SELECT email, pass FROM users WHERE email='$email' AND pass='$pass'";
 $get_rows = mysqli_query($conn, $mysql_get_users);
 
