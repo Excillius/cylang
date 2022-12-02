@@ -14,9 +14,9 @@ function check_dupli($conn, $input)
     return false;
 }
 
-$username = $_POST['username'];
-$pass = $_POST['pass1'];
-$email = $_POST['email'];
+$username = mysqli_real_escape_string($conn, $_POST['username']);
+$pass = mysqli_real_escape_string($conn, $_POST['pass1']);
+$email = mysqli_real_escape_string($conn,$_POST['email']);
 
 $duplUsername = check_dupli($conn,$username);
 $duplEmail = check_dupli($conn,$email);
