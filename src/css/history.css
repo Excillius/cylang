@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url("/Assets/background-blur.png");
+    background-size:cover;
+}
+
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+header img{
+    height: 30px;
+}
+
+header{
+    display: flex;
+    position: relative;
+    height: 50px;
+    padding: 30px 30px;
+}
+
+.headerkiri{
+    font-weight: 700;
+
+}
+
+.headerkanan{
+    position: absolute;
+    right: 20px;
+    width: 600px;
+    font-weight: 300;
+    justify-content: space-around;
+    display: flex;
+}
+
+.wrapping-isi{
+    padding-left: 50px;
+}
+
+.judul{
+    color: white;
+}
+
+.judul h1{
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.subjudul{  
+    width: 1000px;
+    color: white;
+}
+
+.subjudul h2{
+    font-size: 30px;
+    font-weight: 50;
+}
+
+.profile{
+    width: 700px;
+}
+
+.update{
+    text-align: right;
+    padding: 10px 0px 10px 0px;
+}
+
+.update a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.kotakInformasi{
+    background-color: #FFFFFF;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.informasi{
+    padding: 25px 0px 0px 20px;
+}
+
+@media only screen and (max-width: 425px){
+    .headerkanan{
+        position: absolute;
+        right: 5px;
+        width: 300px;
+    }
+    .judul h1{
+        font-size: 50px;
+        font-weight: 600;
+    }
+
+    .subjudul h2{
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .wrapping-isi{
+    padding-left: 35px;
+    }   
+
+    .profile{
+        width: 350px;
+    }
+}

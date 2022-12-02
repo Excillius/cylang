@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url("/Assets/background.png");
+    background-size:cover;
+}
+
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+header img{
+    height: 30px;
+}
+
+header{
+    display: flex;
+    position: relative;
+    height: 50px;
+    padding: 30px 30px;
+}
+
+.headerkiri{
+    font-weight: 700;
+
+}
+
+.headerkanan{
+    position: absolute;
+    right: 20px;
+    width: 600px;
+    font-weight: 300;
+    justify-content: space-around;
+    display: flex;
+}
+
+.wrapping-isi{
+    padding-top: 80px;
+    padding-left: 50px;
+}
+
+.judul{
+    color: white;
+}
+.judul h1{
+    font-size: 120px;
+    font-weight: 600;
+}
+
+.subjudul{  
+    width: 1000px;
+    color: white;
+}
+.subjudul h2{
+    font-size: 60px;
+    font-weight: 100;
+}
+
+.button {
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 100px;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  width: auto;
+  margin-top: 20px;
+}
+
+.button:hover{
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button:active {
+  background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: 1140px) {
+    .headerkanan{
+        position: absolute;
+        right: 40px;
+        width: 600px;
+    }
+    .judul h1{
+        font-size: 90px;
+        font-weight: 600;
+    }
+    .subjudul{  
+        width: 700px;
+        color: white;
+    }
+    .subjudul h2{
+        font-size: 40px;
+        font-weight: 100;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .headerkanan{
+        position: absolute;
+        right: 30px;
+        width: 500px;
+    }
+    .judul h1{
+        font-size: 90px;
+        font-weight: 600;
+    }
+    .subjudul{  
+        width: 600px;
+        color: white;
+    }
+    .subjudul h2{
+        font-size: 40px;
+        font-weight: 100;
+    }
+}
+@media only screen and (max-width: 620px) {
+    .headerkanan{
+        position: absolute;
+        right: 10px;
+        width: 350px;
+    }
+    .judul h1{
+        font-size: 90px;
+        font-weight: 600;
+    }
+    .subjudul{  
+        width: 500px;
+        color: white;
+    }
+    .subjudul h2{
+        font-size: 40px;
+        font-weight: 100;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .headerkanan{
+        position: absolute;
+        right: 5px;
+        width: 300px;
+    }
+    .judul h1{
+        font-size: 60px;
+        font-weight: 600;
+    }
+    .subjudul{  
+        width: 400px;
+        color: white;
+    }
+    .subjudul h2{
+        font-size: 40px;
+        font-weight: 100;
+    }
+}

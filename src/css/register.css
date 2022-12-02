@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url("/Assets/background-loreg.png");
+    background-size:cover;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+header{
+    display: flex;
+    position: relative;
+    height: 50px;
+    padding: 30px 30px;
+}
+
+.headerkiri{
+    font-weight: 700;
+}
+
+.judul{
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.login-box {
+    position: relative;
+    margin: 3% auto;
+    width: 500px;
+    height: 460px;
+    background: #FFF;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .left {
+    position: absolute;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 40px;
+    width: 500px;
+    height: 460px;
+
+  }
+
+  .alreadyhave p{
+    margin-top: 7px;
+  }
+
+  .alreadyhave h5,a{
+    color: #0C1127;
+    text-decoration: none;
+  }
+  .login-box h1 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 28px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 300px;
+    margin-left: 60px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    font-weight: 400;
+    font-size: 15px;
+  
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-bottom: 2px solid #FFC72C;
+    color: black;
+    transition: 0.2s ease;
+  }
+  
+  input[type="submit"] {
+    margin-top: 20px;
+    width: 120px;
+    height: 32px;
+    background: #0C1127;
+    border: none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+  }
+  
+  input[type="submit"]:active {
+    opacity: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+  }
+  
+  button.sign {
+    margin-bottom: 20px;
+    width: 220px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    color: #FFFF;
+    font-weight: 500;
+    transition: 0.2s ease;
+    cursor: pointer;
+  }
+  
+  button.sign:hover, button.sign:focus {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease;
+  }
+  
+  button.sign:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease;
+  }
+
+  @media only screen and (max-width: 425px){
+    .judul{
+      color: white;
+      margin: 20px 0px;
+      text-align: center;
+      font-size: x-large;
+    }
+  
+    .login-box {
+      position: relative;
+      margin: 0px auto;
+      width: 400px;
+      height: 430px;
+      background: #FFF;
+      border-radius: 30px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    
+    .left {
+      position: absolute;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 40px 0px 0px 0px;
+      width: 400px;
+      height: 300px;
+    }
+  
+    .alreadyhave p{
+      margin-top: 7px;
+    }
+  
+    .alreadyhave h5,a{
+      color: #0C1127;
+      text-decoration: none;
+    }
+    .login-box h1 {
+      margin-bottom: 20px;
+      font-weight: 300;
+      font-size: 28px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      padding: 4px;
+      width: 300px;
+      margin-left: 60px;
+      height: 32px;
+      border: none;
+      border-bottom: 1px solid #AAA;
+      font-weight: 400;
+      font-size: 15px;
+    
+    }
+    
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-bottom: 2px solid #FFC72C;
+      color: black;
+      transition: 0.2s ease;
+    }
+    
+    input[type="submit"] {
+      margin-top: 20px;
+      width: 120px;
+      height: 32px;
+      background: #0C1127;
+      border: none;
+      border-radius: 2px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      transition: 0.1s ease;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover,
+    input[type="submit"]:focus {
+      opacity: 0.8;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      transition: 0.1s ease;
+    }
+    
+    input[type="submit"]:active {
+      opacity: 1;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      transition: 0.1s ease;
+    }
+    
+    button.sign {
+      margin-bottom: 20px;
+      width: 220px;
+      height: 36px;
+      border: none;
+      border-radius: 2px;
+      color: #FFFF;
+      font-weight: 500;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+    
+    button.sign:hover, button.sign:focus {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      transition: 0.2s ease;
+    }
+    
+    button.sign:active {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      transition: 0.2s ease;
+    }
+  }

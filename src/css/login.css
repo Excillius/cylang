@@ -1,0 +1,146 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background-image: url("/Assets/background-loreg.png");
+  background-size:cover;
+}
+
+header a{
+  text-decoration: none;
+  color: white;
+}
+
+header{
+  display: flex;
+  position: relative;
+  height: 50px;
+  padding: 30px 30px;
+}
+
+.headerkiri{
+  font-weight: 700;
+}
+
+.isi h1{
+  color: white;
+  margin-top: 40px;
+  text-align: center;
+}
+.login-box {
+
+  margin: 3% auto;
+  width: 500px;
+  height: 400px;
+  background: #FFF;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.isibox {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 500px;
+  height: 400px;
+
+}
+
+.emailpassword{
+    padding-left: 50px;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin: 40px 0;
+  padding: 5px;
+  width: 300px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #FFC72C;
+  color: black;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  margin-left: 140px;
+  margin-top: 20px;
+  width: 120px;
+  height: 32px;
+  background: #0C1127;
+  border: none;
+  border-radius: 6px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+.newto{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.newto a{
+  text-decoration: none;
+  font-weight: 600;
+  color: #0C1127;
+}
+
+.buttonsubmit{
+  position: relative;
+  right: 40px;
+}
+
+@media only screen and (max-width: 425px){
+  .isi h1{
+    color: white;
+    margin: 20px 0px;
+    text-align: center;
+    font-size: x-large;
+  }
+
+  .login-box {
+    width: 400px;
+    height: 400px;
+    background: #FFF;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .emailpassword{
+    padding-left: 0px;
+  }
+  
+  .isibox {
+    position: absolute;
+    box-sizing: border-box;
+    width: 400px;
+    height: 400px;
+  }
+}

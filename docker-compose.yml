@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  cylang_php:
+    build: 
+      context: .
+      dockerfile: php_docker.Dockerfile
+    container_name: cylang_main
+    ports:
+      - 3738:80
+  cylang_db:
+    environment:
+      MYSQL_ROOT_PASSWORD: '7:2,M4AytU:Rf7092qp1'
+      MYSQL_PASSWORD: '7:2,M4AytU:Rf7'
+      MYSQL_USER: 'cylang'
+      MYSQL_DATABASE: 'logindb'
+      MYSQL_ROOT_HOST: '%'
+    build:
+      context: .
+      dockerfile: mysql_docker.Dockerfile
+    container_name: cylang_login_db
+    ports: 
+      - 7374:33060
+    restart: always
