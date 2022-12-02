@@ -1,11 +1,11 @@
 <?php
     $conn = mysqli_connect('cylang_db', 'cylang', '7:2,M4AytU:Rf7', 'logindb');
     
-    $input = $_POST['textbox-input'];
-    $type = $_POST['type-crypt'];
-    $output = $_POST['textbox-output'];
+    $input = mysqli_real_escape_string($conn,$_POST['textbox-input']);
+    $type = mysqli_real_escape_string($conn,$_POST['type-crypt']);
+    $output = mysqli_real_escape_string($conn,$_POST['textbox-output']);
 
-    $koki = $_COOKIE["session"];
+    $koki = mysqli_real_escape_string($conn,$_COOKIE["session"]);
     $select_id = "SELECT id FROM users WHERE hashing='$koki'";
     $get_rows = mysqli_query($conn, $select_id);
     while($row = mysqli_fetch_array($get_rows))
