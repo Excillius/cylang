@@ -21,10 +21,9 @@ $email = mysqli_real_escape_string($conn,$_POST['email']);
 $duplUsername = check_dupli($conn,$username);
 $duplEmail = check_dupli($conn,$email);
 
-$token = sha1($username+$pass);
 if ($duplUsername === false and $duplEmail === false) 
 {
-    $insert_user_db = "INSERT INTO users (email, username, pass, hashing) VALUES ('$email','$username', '$pass', '$token')";
+    $insert_user_db = "INSERT INTO users (email, username, pass) VALUES ('$email','$username', '$pass')";
     if (mysqli_query($conn, $insert_user_db))
     echo 
     "<script>
