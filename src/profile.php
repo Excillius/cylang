@@ -1,5 +1,8 @@
 <?php
-    include './php/showProfile.php';
+    session_start();
+    $nama = $_SESSION["username"];
+    $email = $_SESSION["email"];
+    $address = $_SESSION["domicile"];
 ?>
 
 <!DOCTYPE html>
