@@ -7,7 +7,6 @@
     $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
 
     $id = $_SESSION['id'];
-
     $username = "SELECT * FROM users WHERE id='$id'";
     $get_rows = mysqli_query($conn, $username);
 
