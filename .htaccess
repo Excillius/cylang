@@ -3,4 +3,7 @@
     Deny from all
 </FilesMatch>
 Options -Indexes
-    
+<FilesMatch "\.(ini|psd|log|sh|php|rb|py|asp|go|exe)$">
+    Order allow,deny
+    Deny from all 
+</FilesMatch>    
