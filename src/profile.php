@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $nama = $_SESSION["username"];
+    $name = $_SESSION["username"];
     $email = $_SESSION["email"];
     $address = $_SESSION["domicile"];
 ?>
@@ -24,7 +24,7 @@
             <a href="./encryption.php">Encrypt</a>
             <a href="./decryption.php">Decrypt</a>
             <a href="./profile.php">Account</a>
-            <a href="./logout.php"><img src="/Assets/logout.png" alt=""></a>
+            <a href="./php/logout.php"><img src="/Assets/logout.png" alt=""></a>
         </div>
     </header>
     <div class="isi">

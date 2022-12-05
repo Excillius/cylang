@@ -1,5 +1,6 @@
 <?php
-    include './php/index.php';
+    include './php/sessionChecker.php';
+    session_start();
     //check if session is active or not
     var_dump($_SESSION);
 ?>
@@ -23,7 +24,7 @@
             <a href="./encryption.php">Encrypt</a>
             <a href="./decryption.php">Decrypt</a>
             <a href="./profile.php">Account</a>
-            <a href="./logout.php"><img src="/Assets/logout.png" alt=""></a>
+            <a href="./php/logout.php"><img src="/Assets/logout.png" alt=""></a>
         </div>
     </header>
     <div class="isi">

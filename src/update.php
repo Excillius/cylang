@@ -17,7 +17,7 @@
             <a href="./encryption.php">Encrypt</a>
             <a href="./decryption.php">Decrypt</a>
             <a href="./profile.php">Account</a>
-            <a href="./logout.php"><img src="/Assets/logout.png" alt=""></a>
+            <a href="./php/logout.php"><img src="/Assets/logout.png" alt=""></a>
         </div>
     </header>
     <div class="isi">
@@ -26,7 +26,7 @@
                 <h1 id="namaUser" ></h1>
             </div>
             <div class="profile">
-                <form name="update" action="/php/update.php" method="post">
+                <form name="update" action="/php/updateData.php" method="post">
                     <div class="kotakInformasi">
                         <h3>Profile Picture</h3>
                         <input type="file" name="profilpic" id="profilpic">

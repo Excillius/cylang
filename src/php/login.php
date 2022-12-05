@@ -8,7 +8,7 @@ $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQ
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);
 $pass = mysqli_real_escape_string($conn, $_POST['password']);
-$mysql_get_users = "SELECT email, pass FROM users WHERE email='$email' AND pass='$pass'";
+$mysql_get_users = "SELECT * FROM users WHERE email='$email' AND pass='$pass'";
 $get_rows = mysqli_query($conn, $mysql_get_users);
 
 if($row = mysqli_fetch_assoc($get_rows))
