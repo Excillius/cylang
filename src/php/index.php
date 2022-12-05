@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE){
-    echo "<script>alert(\"Please create an account or login to an account first!!\");window.location = 'http://0.0.0.0:3738/login.html';</script>";
+    if(isset($_SESSION['id']) && empty($_SESSION['id']) === true){
+    echo "<script>alert('Please create an account or login to an account first!!');window.location = 'http://0.0.0.0:3738/login.html';</script>";
     }
 ?>

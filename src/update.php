@@ -74,40 +74,70 @@
     </footer>
 </body>
 </html>
+
 <?php
+// create a directory to keep uploaded file
 $upload_dir = "storage/";
+if (!file_exists($upload_dir)) {
+    mkdir($upload_dir, 0777, true);
+}
 
-if (!file_exists($upload_dir))
-mkdir($upload_dir, 0777, true);
-
+// create an error message
 $error = "";
 
-$file_hash = uniqid();
-$file_name = md5('$file_hash') . '_' . time() . '_' . basename($_FILES["file"]["name"]);
-$store_file = $upload_dir . $file_name;
-$file_type = strtolower(pathinfo($store_file, PATHINFO_EXTENSION));
+// get file name
+$uploaded_file_name = $_FILES["file"]["name"];
+$uploaded_file_size = $_FILES["file"]["size"];
+$uploaded_file_temp_directory = $_FILES["file"]["tmp_name"];
 
-if (file_exists($store_file))
-$error = "Sorry, file already exists.";
+// function validate file extension (file type and more than one extension)
+function validateExtension($uploaded_file_name, $error) {
+    $file_array = explode(".", $uploaded_file_name);
 
-if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg")
-$error = "This extension is not allowed.";
+    if (count($file_array) == 2) { // jika tipe data hanya 1
+        $temp_file_type = strtolower($file_array[1]);
 
-if ($_FILES['file']['size'] > 2000000)
-$error = "File must be less than or equal to 2MB.";
+        if ($temp_file_type != "jpg" && $temp_file_type != "png" && $temp_file_type != "jpeg") {
+            $error = "This extension is not allowed!";
+        }
+    }
+    else { // jika tipe data lebih dari 1 atau kurang dari 1
+        $error = "There was an error uploading your file.";
+    }
+}
 
-if (empty($error)) 
-{
-    if (move_uploaded_file($_FILES["file"]["tmp_name"], $store_file)) 
-    echo "The file has been uploaded.";
- 
-    else
-    echo "Error: There was an error uploading your file.";
-} 
+// function validate file size (max 1MB)
+function validateFileSize($uploaded_file_size, $error) {
+    if ($uploaded_file_size > 1000000) {
+        $error = "File must be 1MB or less in size.";
+    }
+}
 
-else 
-echo "Error: " . $error;
+// rename file
+$new_rand_file_name = "";
+function randomizeFileName($uploaded_file_name, $new_rand_file_name) {
+    $file_hash = uniqid();
+    $new_rand_file_name = md5("$file_hash") . "_" . time() . "_" . basename($uploaded_file_name);
+}
 
+validateFileSize($uploaded_file_size, $error);
+validateExtension($uploaded_file_name, $error);
+randomizeFileName($uploaded_file_name, $new_rand_file_name);
+
+$upload_file_to = $upload_dir . $new_rand_file_name;
+if (empty($error)) { // if no found error (validated and OK)
+    if (move_uploaded_file($uploaded_file_temp_directory, $upload_file_to)) {
+        echo "You have successfully updated your profile picture!";
+    }
+    else {
+        echo "Error: There was an error uploading your file.";
+    }
+}
+else {
+    echo "Error: " . $error;
+}
+
+// ========================================
 
 function validate_header(){
     if ( !file_exists( $file ) ) return false;
