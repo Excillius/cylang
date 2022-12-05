@@ -1,5 +1,7 @@
 <?php
     include './php/index.php';
+    //check if session is active or not
+    var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
