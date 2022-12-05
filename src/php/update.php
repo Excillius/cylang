@@ -34,10 +34,11 @@
     $error = "";
 
     // get file name
+    $uploaded_file = $_FILES["file"];
     $uploaded_file_name = $_FILES["file"]["name"];
     $uploaded_file_size = $_FILES["file"]["size"];
     $uploaded_file_temp_directory = $_FILES["file"]["tmp_name"];
-
+    
     // function validate file extension (file type and more than one extension)
     function validateExtension($uploaded_file_name, $error) {
         $file_array = explode(".", $uploaded_file_name);
@@ -61,9 +62,9 @@
         }
     }
 
-    function validate_header(){
-        if ( !file_exists( $file ) ) return false;
-        if ( $f = fopen($file, 'rb') ) 
+    function validateHeader($uploaded_file){
+        if ( !file_exists( $uploaded_file ) ) return false;
+        if ( $f = fopen($uploaded_file, 'rb') ) 
         {
             $header = fread($f, 8);
             fclose($f);
@@ -86,7 +87,9 @@
 
     validateFileSize($uploaded_file_size, $error);
     validateExtension($uploaded_file_name, $error);
+    validateHeader($uploaded_file);
     randomizeFileName($uploaded_file_name, $new_rand_file_name);
+    
 
     $upload_file_to = $upload_dir . $new_rand_file_name;
     if (empty($error)) { // if no found error (validated and OK)
