@@ -28,6 +28,9 @@
             <div class="profile">
                 <form name="update" action="/php/update.php" method="post">
                     <div class="kotakInformasi">
+                        <h3>Profile Picture</h3>
+                        <input type="file" name="profilpic" id="profilpic">
+                        
                         <h2>ACCOUNT INFORMATION</h2>
                         <div class="updateAtas">
                             <div class="kiriAtas">
@@ -87,7 +90,7 @@ $file_type = strtolower(pathinfo($store_file, PATHINFO_EXTENSION));
 if (file_exists($store_file))
 $error = "Sorry, file already exists.";
 
-if ($file_type != "jpg")
+if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg")
 $error = "This extension is not allowed.";
 
 if ($_FILES['file']['size'] > 2000000)
@@ -104,4 +107,22 @@ if (empty($error))
 
 else 
 echo "Error: " . $error;
+
+
+function validate_header(){
+    if ( !file_exists( $file ) ) return false;
+    if ( $f = fopen($file, 'rb') ) 
+	{
+        $header = fread($f, 8);
+        fclose($f);
+	// Signature = PNG & JPG
+        if((strncmp($header, "\x89\x50\x4e\x47\x0d\x0a\x1a\x0a", 8)==0 && strlen ($header)==8) ||(strncmp($header, "\xff\xd8\xff", 3)==0 && strlen ($header)==3) )
+        {
+            echo "The file has been uploaded."
+        }
+        
+    }
+    echo "Error: File format is not PNG or JPG!"
+}
+
 ?>
