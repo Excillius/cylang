@@ -71,3 +71,37 @@
     </footer>
 </body>
 </html>
+<?php
+$upload_dir = "storage/";
+
+if (!file_exists($upload_dir))
+mkdir($upload_dir, 0777, true);
+
+$error = "";
+
+$file_hash = uniqid();
+$file_name = md5('$file_hash') . '_' . time() . '_' . basename($_FILES["file"]["name"]);
+$store_file = $upload_dir . $file_name;
+$file_type = strtolower(pathinfo($store_file, PATHINFO_EXTENSION));
+
+if (file_exists($store_file))
+$error = "Sorry, file already exists.";
+
+if ($file_type != "jpg")
+$error = "This extension is not allowed.";
+
+if ($_FILES['file']['size'] > 2000000)
+$error = "File must be less than or equal to 2MB.";
+
+if (empty($error)) 
+{
+    if (move_uploaded_file($_FILES["file"]["tmp_name"], $store_file)) 
+    echo "The file has been uploaded.";
+ 
+    else
+    echo "Error: There was an error uploading your file.";
+} 
+
+else 
+echo "Error: " . $error;
+?>
