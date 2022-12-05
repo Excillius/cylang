@@ -1,8 +1,5 @@
 <?php
     include './php/showProfile.php';
-    session_start();
-    $name = $_SESSION['username'];
-    $email = $_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
