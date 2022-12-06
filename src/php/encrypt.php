@@ -11,8 +11,6 @@
     $output = mysqli_real_escape_string($conn, $_POST['textbox-output']);
 
     $id = $_SESSION["id"];
-    $_SESSION['decrypt'] = $input;
-    $_SESSION['encrypt'] = $output;
     $insert_history = "INSERT INTO enc (usrID, plnStr, encStr, typeEnc) VALUES ('$id','$input', '$output', '$type')";
     mysqli_query($conn, $insert_history);
     echo "<script>window.location = 'http://0.0.0.0:3738/encryption.php';</script>"; 

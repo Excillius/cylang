@@ -4,16 +4,14 @@
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
     
-    $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
+    $conn = mysqli_connect("cylang_db",);
     
     $input = mysqli_real_escape_string($conn, $_POST['textbox-input']);
     $type = mysqli_real_escape_string($conn, $_POST['type-crypt']);
     $output = mysqli_real_escape_string($conn, $_POST['textbox-output']);
 
     $id = $_SESSION["id"];
-    $_SESSION['decrypt'] = $input;
-    $_SESSION['plain'] = $output;
-    $insert_history = "INSERT INTO dsc (usrID, plnStr, encStr, typeEnc) VALUES ('$id','$input', '$output', '$type')";
+    $insert_history = "INSERT INTO dcr (usrID, plnStr, decStr, typeEnc) VALUES ('$id','$input', '$output', '$type')";
     mysqli_query($conn, $insert_history);
     echo "<script>window.location = 'http://0.0.0.0:3738/decryption.php';</script>"; 
 ?>
