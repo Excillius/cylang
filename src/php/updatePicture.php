@@ -6,7 +6,6 @@ $dotenv->load();
 
 $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
 
-print_r($_FILES['file']);
 $upload_dir = "storage/";
 if (!file_exists($upload_dir)) {
     mkdir($upload_dir, 0777, true);

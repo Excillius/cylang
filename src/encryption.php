@@ -1,5 +1,5 @@
 <?php
-    include '/php/showEncrypt.php';
+    include './php/showEncrypt.php';
 ?>
 
 <!DOCTYPE html>

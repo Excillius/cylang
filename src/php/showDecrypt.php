@@ -7,8 +7,8 @@
     $get_rows = mysqli_query($conn, $select_dec);
     while($row = mysqli_fetch_array($get_rows))
     {
-        $input = $row['decStr'];
+        $input = $row['plnStr'];
         $type = $row['typeEnc'];
-        $output = $row['plnStr'];
+        $output = $row['decStr'];
     }
 ?>
