@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/css/profilepic.css">
+    <link rel="stylesheet" href="/css/profilepic.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
                 <form action="./php/updatePicture.php" method="post" enctype="multipart/form-data"></form>
                 Select a file
                 <input type="file" name="" id="file" onchange="profpic(event)" style="display: none;">
-                <label for="file"><img src="/src/Assets/upload.png" alt="" class="gambar"></label>
+                <label for="file"><img src="../Assets/upload.png" alt="" class="gambar"></label>
                 <input type="submit" value="Submit">
             </div>
             <div class="foto" id="foto">
