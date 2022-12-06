@@ -5,22 +5,10 @@
     $email = $_SESSION["email"];
     $address = $_SESSION["domicile"];
 
-    session_start();
-    require_once('../vendor/autoload.php');
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
-
-    $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
-    $id = $_SESSION['id'];
-    $mysql_get_users = "SELECT * FROM users WHERE id='$id'";
-    $get_rows = mysqli_query($conn, $mysql_get_users);
-    if($row = mysqli_fetch_assoc($get_rows))
-    {
-        if($row["uploads"] == NULL){
-            $uploads = "./Assets/default.png";
-        } else{
-            $uploads = $row["uploads"];
-        }
+    if(!isset($_SESSION['prof']) && empty($_SESSION['prof']) === true){
+        $uploads = $_SESSION['prof'];
+    } else{
+        $uploads = "./Assets/default.png";
     }
 ?>
 
