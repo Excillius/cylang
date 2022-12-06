@@ -1,8 +1,4 @@
 <?php
-$upload_dir = "../storage/";
-if (!file_exists($upload_dir)) {
-    mkdir($upload_dir, 0777, true);
-}
 
 // check if upload is empty
 if ($_FILES['file']['error'] === 4)

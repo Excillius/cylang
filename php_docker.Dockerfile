@@ -15,3 +15,11 @@ RUN service apache2 restart
 RUN apt-get -y install git
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer require vlucas/phpdotenv
+
+RUN rm /etc/apache2/apache2.conf
+ADD apache2.conf /etc/apache2/apache2.conf
+
+RUN mkdir /var/www/html/storage
+RUN chmod 777 /var/www/html/storage
+ADD .htaccess /var/www/html/storage/.htaccess
+RUN service apache2 restart
