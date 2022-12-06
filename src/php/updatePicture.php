@@ -25,7 +25,7 @@ validateHeader($newFile);
 // function validate file extension (file type and more than one extension)
 function validateExtension($uploaded_file_name) {
     $file_array = explode(".", $uploaded_file_name);
-   
+    
     if (count($file_array) > 2) { // jika terdapat lebih dari satu extension
         echo "<script>alert('This extension is not allowed!');window.location = '../update.php'</script>";
         exit();    
