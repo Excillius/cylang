@@ -1,5 +1,6 @@
 <?php
-    include './php/showDecrypt.php';
+    include '/php/showDecrypt.php';
+    $output = $_SESSION['decrypt'];
 ?>
 
 <!DOCTYPE html>
