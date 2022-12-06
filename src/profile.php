@@ -42,7 +42,7 @@
     <div class="isi">
         <div class="wrapping-isi">
             <div class="judul">
-                <img src="<?php $image ?>" alt=""> 
+                <img src="<?php $uploads ?>" alt=""> 
                 <h1 id="namaUser" >
                     <script>
                         document.getElementById("namaUser").innerHTML = "<?php echo $name; ?>";
