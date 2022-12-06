@@ -4,7 +4,7 @@
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
     
-    $conn = mysqli_connect("cylang_db",);
+    $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
     
     $input = mysqli_real_escape_string($conn, $_POST['textbox-input']);
     $type = mysqli_real_escape_string($conn, $_POST['type-crypt']);

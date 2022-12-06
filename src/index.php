@@ -1,8 +1,6 @@
 <?php
     include './php/sessionChecker.php';
     session_start();
-    //check if session is active or not
-    // var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>

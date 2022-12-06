@@ -1,2 +1,1 @@
 # cylang
-yak mantap
