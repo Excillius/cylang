@@ -49,7 +49,7 @@
                             <option value="hexadecimal">hexadecimal</option>
                             <option value="decimal">decimal</option>
                         </select></p>php
-                        <a href="./history.php"><img src="/Assets/history.png" alt=""></a>
+                        <!-- <a href="./history.php"><img src="/Assets/history.png" alt=""></a> -->
                     </div>
                     <p><textarea name="textbox-output" id="textbox-output" autofocus></textarea>
                         <script>
