@@ -25,6 +25,9 @@ if($row = mysqli_fetch_assoc($get_rows))
     //session email
     $_SESSION['email'] = $row['email'];
 
+    //session file
+    $_SESSION['file'] = $row['uploads'];
+
     
     echo "<script>alert('You have successfully login!!');window.location = 'http://0.0.0.0:3738/index.php';</script>";
 }

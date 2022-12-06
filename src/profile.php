@@ -5,10 +5,10 @@
     $email = $_SESSION["email"];
     $address = $_SESSION["domicile"];
 
-    if(!isset($_SESSION['prof']) && empty($_SESSION['prof']) === true){
-        $uploads = $_SESSION['prof'];
-    } else{
+    if(empty($_SESSION['file']) === true){
         $uploads = "./Assets/default.png";
+    } else{
+        $uploads = $_SESSION['file'];
     }
 ?>
 
