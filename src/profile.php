@@ -8,7 +8,7 @@
     if(empty($_SESSION['file']) === true){
         $uploads = "./Assets/default.png";
     } else{
-        $uploads = $_SESSION['file'];
+        $uploads = "./php/".$_SESSION['file'];
     }
 ?>
 
@@ -37,7 +37,7 @@
     <div class="isi">
         <div class="wrapping-isi">
             <div class="judul">
-                <img src="<?php $uploads ?>" alt=""> 
+                <img src="<?php echo $uploads ?>" alt="" style="width: 200px; border-radius: 50%;"> 
                 <h1 id="namaUser" >
                     <script>
                         document.getElementById("namaUser").innerHTML = "<?php echo $name; ?>";

@@ -7,7 +7,7 @@ $dotenv->load();
 $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
 
 print_r($_FILES['file']);
-$upload_dir = "../storage/";
+$upload_dir = "storage/";
 if (!file_exists($upload_dir)) {
     mkdir($upload_dir, 0777, true);
 }
@@ -55,7 +55,6 @@ function moveAndRenameFile($tmp, $upload_location, $file_name){
     $base_file = $upload_location . $new_rand_file_name;
 
     if (move_uploaded_file($tmp, $base_file)) {
-        $_SESSION['file'] = $base_file;
         return $base_file;
         exit();
     }
@@ -90,7 +89,7 @@ function validateHeader($file){
         }
     } 
 }
-
+$_SESSION['file'] = $newFile;
 $id = $_SESSION['id'];
 $update_uploads = "UPDATE users SET uploads = '$newFile' WHERE id = '$id'";
 mysqli_query($conn, $update_uploads);
