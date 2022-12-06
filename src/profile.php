@@ -41,6 +41,7 @@
             </div>
             <div class="profile">
                 <div class="update">
+                    <a href="./profilePicture.php"><p>Update Profile Picture</p></a>
                     <a href="./update.php"><p>Update Profile</p></a>
                 </div>
                 <div class="kotakInformasi">

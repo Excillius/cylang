@@ -28,9 +28,6 @@
             <div class="profile">
                 <form name="update" action="/php/updateData.php" method="post">
                     <div class="kotakInformasi">
-                        <h3>Profile Picture</h3>
-                        <input type="file" name="profilpic" id="profilpic">
-                        
                         <h2>ACCOUNT INFORMATION</h2>
                         <div class="updateAtas">
                             <div class="kiriAtas">
