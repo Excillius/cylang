@@ -22,6 +22,8 @@
     {
         $_SESSION["username"] = $row["username"];
         $_SESSION["email"] = $row["email"];
+        $_SESSION["domicile"] = $row["domicile"];
+        
         echo "<script>alert('You have successfully updated your profile!!');window.location = 'http://0.0.0.0:3738/profile.php';</script>";
     }
 
