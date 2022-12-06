@@ -91,7 +91,7 @@ function validateHeader($file){
 }
 
 $id = $_SESSION['id'];
-$update_uploads = "UPDATE users SET uploads = '$base_file' WHERE id = '$id'";
+$update_uploads = "UPDATE users SET uploads = '$newFile' WHERE id = '$id'";
 mysqli_query($conn, $update_uploads);
 
 echo "<script>alert('You have successfully updated your profile picture!');window.location = '../profilePicture.php'</script>";

@@ -1,4 +1,5 @@
 <?php
+    
     session_start();
     $name = $_SESSION["username"];
     $email = $_SESSION["email"];
@@ -11,10 +12,16 @@
 
     $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
     $id = $_SESSION['id'];
-    $select = "SELECT * FROM users WHERE id = '$id'";
-    $get_rows = mysqli_query($conn, $select);
-    $rows = mysqli_fetch_assoc($get_rows);
-    $uploads = $rows['uploads'];
+    $mysql_get_users = "SELECT * FROM users WHERE id='$id'";
+    $get_rows = mysqli_query($conn, $mysql_get_users);
+    if($row = mysqli_fetch_assoc($get_rows))
+    {
+        if($row["uploads"] == NULL){
+            $uploads = "./Assets/default.png";
+        } else{
+            $uploads = $row["uploads"];
+        }
+    }
 ?>
 
 <!DOCTYPE html>
