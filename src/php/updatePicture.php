@@ -1,4 +1,9 @@
 <?php
+print_r($_FILES['file']);
+$upload_dir = "storage/";
+if (!file_exists($upload_dir)) {
+    mkdir($upload_dir, 0777, true);
+}
 
 // check if upload is empty
 if ($_FILES['file']['error'] === 4)
@@ -41,6 +46,7 @@ function moveAndRenameFile($tmp, $upload_location, $file_name){
     $file_id = uniqid();
     $new_rand_file_name = md5($file_id) . "_" . time() . "_" . basename($file_name);
     $base_file = $upload_location . $new_rand_file_name;
+
     if (move_uploaded_file($tmp, $base_file)) {
         return $base_file;
         exit();

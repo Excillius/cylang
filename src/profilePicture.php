@@ -12,20 +12,17 @@
         <h1 style="color: white;">Profile Picture</h1>
         <div class="wrapping2">
             <div class="form">
-                <form action="./php/updatePicture.php" method="post" enctype="multipart/form-data"></form>
-                Select a file
-                <input type="file" name="" id="file" onchange="profpic(event)" style="display: none;">
-                <label for="file"><img src="../Assets/upload.png" alt="" class="gambar"></label>
-                <input type="submit" value="Submit">
+            <form action="php/updatePicture.php" method="post" enctype="multipart/form-data" id="upload">
+                Choose File: <input type="file" name="file" onchange="profpic(event)"/>
+                <input type="submit" name="upload" value="upload" />
+            </form>
             </div>
             <div class="foto" id="foto">
-
             </div>
         </div>
     </div>
     
 </form>
-
 
 <script>
     var foto = document.getElementById("foto");
