@@ -13,7 +13,8 @@ CREATE TABLE users (
     username VARCHAR(100) NOT NULL,
     pass VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    domicile VARCHAR(100) NOT NULL
+    domicile VARCHAR(100) NOT NULL,
+    uploads VARCHAR(300) NOT NULL
 );
 
 CREATE TABLE enc(

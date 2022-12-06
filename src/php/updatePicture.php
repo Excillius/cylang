@@ -1,4 +1,11 @@
 <?php
+session_start();
+require_once('../vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
+
 print_r($_FILES['file']);
 $upload_dir = "storage/";
 if (!file_exists($upload_dir)) {
@@ -82,6 +89,10 @@ function validateHeader($file){
         }
     } 
 }
+
+$id = $_SESSION['id'];
+$update_uploads = "UPDATE users SET uploads = '$new_rand_file_name' WHERE id = '$id'";
+mysqli_query($conn, $update_uploads);
 
 echo "<script>alert('You have successfully updated your profile picture!');window.location = '../profilePicture.php'</script>";
 ?>
