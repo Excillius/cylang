@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="upload.php" method="post" enctype="multipart/form-data"></form>
+    <form action="./php/updatePicture.php" method="post" enctype="multipart/form-data"></form>
         Please select a picture to be your profile picture!
     <input type="file" name="" id="">
     <input type="submit" value="Submit">

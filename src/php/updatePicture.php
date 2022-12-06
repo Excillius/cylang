@@ -3,10 +3,6 @@ $upload_dir = "../storage/";
 if (!file_exists($upload_dir)) {
     mkdir($upload_dir, 0777, true);
 }
-$upload_dir_user = $upload_dir . $_SESSION['id'] . "/";
-if (!file_exists($upload_dir_user)) {
-    mkdir($upload_dir_user, 0777, true);
-}
 
 // check if upload is empty
 if ($_FILES['file']['error'] === 4)
@@ -23,7 +19,7 @@ $uploaded_file_temp_name = $_FILES["file"]["tmp_name"];
 
 validateExtension($uploaded_file_name);
 validateFileSize($uploaded_file_size);
-$newFile = moveAndRenameFile($uploaded_file_temp_name, $upload_dir_user, $uploaded_file_name);
+$newFile = moveAndRenameFile($uploaded_file_temp_name, $upload_dir, $uploaded_file_name);
 validateHeader($newFile);
 
 // function validate file extension (file type and more than one extension)
@@ -33,12 +29,7 @@ function validateExtension($uploaded_file_name) {
     if (count($file_array) > 2) { // jika terdapat lebih dari satu extension
         echo "<script>alert('This extension is not allowed!');window.location = '../update.php'</script>";
         exit();    
-    }
-    else if ($file_array[1] !== "jpg" or $file_array[1] !== "png" or $file_array[1] !== "jpeg"){
-        echo "<script>alert('This extension is not allowed!');window.location = '../update.php'</script>";
-        exit();
-    }
-    
+    }    
 }
 
 // function validate file size (max 1MB)
