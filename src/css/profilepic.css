@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: URL("../Assets/background.png");
+}
+
+.wrapping1{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapping2{
+    width: 600px;
+    height: 600px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.form{
+    padding-top: 50px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px
+
+}
+
+.foto{
+    width: 100px;
+    height: 100px;
+    background-size:cover;
+}
+
+.gambar{
+    width: 100px;
+}
