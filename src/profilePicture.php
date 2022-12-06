@@ -21,15 +21,11 @@
             </div>
         </div>
     </div>
-    
-</form>
-
 <script>
     var foto = document.getElementById("foto");
     var profpic = function(event){
         foto.style.backgroundImage = "url("+URL.createObjectURL(event.target.files[0])+")";
     }
 </script>
-
 </body>
 </html>

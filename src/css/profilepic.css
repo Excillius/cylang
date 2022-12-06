@@ -34,9 +34,10 @@ body{
 }
 
 .foto{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background-size:cover;
+    border-radius: 50%;
 }
 
 .gambar{
