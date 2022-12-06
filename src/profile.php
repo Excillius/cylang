@@ -3,6 +3,18 @@
     $name = $_SESSION["username"];
     $email = $_SESSION["email"];
     $address = $_SESSION["domicile"];
+
+    session_start();
+    require_once('../vendor/autoload.php');
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+
+    $conn = mysqli_connect($_ENV["MYSQL_HOSTNAME"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_PASSWORD"], $_ENV["MYSQL_DATABASE"]);
+    $id = $_SESSION['id'];
+    $select = "SELECT * FROM users WHERE id = '$id'";
+    $get_rows = mysqli_query($conn, $select);
+    $rows = mysqli_fetch_assoc($get_rows);
+    $uploads = $rows['uploads'];
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +42,7 @@
     <div class="isi">
         <div class="wrapping-isi">
             <div class="judul">
+                <img src="<?php $image ?>" alt=""> 
                 <h1 id="namaUser" >
                     <script>
                         document.getElementById("namaUser").innerHTML = "<?php echo $name; ?>";
