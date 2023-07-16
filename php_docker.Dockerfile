@@ -1,4 +1,4 @@
-FROM php:8.1.15-apache
+FROM php:8.1.20-apache
 
 RUN apt-get update
 
